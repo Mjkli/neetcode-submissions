@@ -1,0 +1,11 @@
+class KthLargest:
+
+    def __init__(self, k: int, nums: List[int]):
+        self.k = k - 1 # after sorted then its the k - 1 element
+        self.nums = nums
+
+
+    def add(self, val: int) -> int:
+        self.nums.append(val)
+        sorted_nums = sorted(self.nums, reverse=True)
+        return sorted_nums[self.k]
